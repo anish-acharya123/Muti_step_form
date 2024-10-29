@@ -20,13 +20,18 @@ const Form = () => {
     control,
     formState: { errors },
     reset,
+    trigger,
   } = useForm();
 
-  const onSubmit = (data: any) => {
-    console.log(data);
-    setStep(0);
-    alert("congratulation");
-    reset();
+  const onSubmit = async (data: any) => {
+    const isValid = await trigger();
+    
+    if (isValid) {
+      console.log(data);
+      setStep(0);
+      alert("congratulation");
+      reset();
+    }
   };
 
   const Switchstep = (currentStep: number) => {

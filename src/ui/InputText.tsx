@@ -30,14 +30,19 @@ const InputText = ({
           message: `Enter a valid ${label}`,
         },
       }}
-      render={({ field }) => (
+      render={({ field: { onChange, onBlur, value, ref } }) => (
         <TextField
-          {...field}
+          inputRef={ref}
+          value={value}
           label={label}
           variant={variant}
           error={!!errors[name]}
           helperText={errors[name] ? (errors[name]?.message as string) : ""}
           fullWidth
+          onChange={(e) => {
+            onChange(e);
+          }}
+          onBlur={onBlur}
         />
       )}
     />
