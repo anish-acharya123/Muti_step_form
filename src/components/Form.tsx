@@ -15,16 +15,19 @@ const Form = () => {
 
   const { step, setStep } = stepContext;
   //   console.log(step);
-  
+
   const {
     handleSubmit,
     control,
     formState: { errors },
+    reset,
   } = useForm();
 
   const onSubmit = (data: any) => {
     console.log(data);
     setStep(0);
+    alert("congratulation");
+    reset();
   };
 
   const Switchstep = (currentStep: number) => {
