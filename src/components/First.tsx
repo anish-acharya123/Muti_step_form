@@ -10,6 +10,7 @@ export type inputItems = {
   name: string;
   label: string;
   variant?: "outlined" | "standard";
+  pattern: RegExp;
 };
 
 export type Props = {
@@ -18,12 +19,22 @@ export type Props = {
 };
 const First = ({ control, errors }: Props) => {
   const firstInputs: inputItems[] = [
-    { name: "fname", label: "First Name", variant: "outlined" },
-    { name: "lname", label: "Last Name" },
+    {
+      name: "fname",
+      label: "First Name",
+      variant: "outlined",
+      pattern: /^[A-Za-z\s]{2,30}$/,
+    },
+    { name: "lname", label: "Last Name", pattern: /^[A-Za-z\s]{2,30}$/ },
   ];
   const secondInputs: inputItems[] = [
-    { name: "age", label: "Age", variant: "outlined" },
-    { name: "occupation", label: "Occupation" },
+    {
+      name: "age",
+      label: "Age",
+      variant: "outlined",
+      pattern: /^(1[01]?[0-9]|[1-9]?[0-9])$/,
+    },
+    { name: "occupation", label: "Occupation", pattern: /^[A-Za-z\s]{2,30}$/ },
   ];
   return (
     <div className="space-y-4">

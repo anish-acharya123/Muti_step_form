@@ -5,12 +5,29 @@ import { inputItems, Props } from "./First";
 
 const Third = ({ control, errors }: Props) => {
   const firstInputs: inputItems[] = [
-    { name: "pnumber", label: "Number" },
-    { name: "email", label: "Email Address" },
+    {
+      name: "pnumber",
+      label: "Number",
+      pattern: /^(\+?\d{1,3}[- ]?)?\(?\d{3}\)?[- ]?\d{3}[- ]?\d{4}$/,
+    },
+    {
+      name: "email",
+      label: "Email Address",
+      pattern: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
+    },
   ];
   const secondInputs: inputItems[] = [
-    { name: "github", label: "Github Link", variant: "outlined" },
-    { name: "linkedin", label: "Linkedin Link" },
+    {
+      name: "github",
+      label: "Github Link",
+      variant: "outlined",
+      pattern: /^(https?:\/\/)?(www\.)?github\.com\/[a-zA-Z0-9_-]+(\/)?$/,
+    },
+    {
+      name: "linkedin",
+      label: "Linkedin Link",
+      pattern: /^(https?:\/\/)?(www\.)?linkedin\.com\/in\/[a-zA-Z0-9-]+\/?$/,
+    },
   ];
   return (
     <div className="space-y-4">

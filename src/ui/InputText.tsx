@@ -7,6 +7,7 @@ type textProps = {
   control: any;
   errors: FieldErrors<FieldValues>;
   variant?: "outlined" | "standard";
+  pattern: RegExp;
 };
 
 const InputText = ({
@@ -15,20 +16,27 @@ const InputText = ({
   name,
   control,
   errors,
+  pattern,
 }: textProps) => {
   return (
     <Controller
       name={name}
       control={control}
       defaultValue=""
-      rules={{ required: `${label}is required` }}
+      rules={{
+        required: `${label}is required`,
+        pattern: {
+          value: pattern,
+          message: `Enter a valid ${label}`,
+        },
+      }}
       render={({ field }) => (
         <TextField
           {...field}
           label={label}
           variant={variant}
-          error={!!errors.firstName}
-          // helperText={errors.firstName ? errors.firstName.message : ""}
+          error={!!errors[name]}
+          helperText={errors[name] ? (errors[name]?.message as string) : ""}
           fullWidth
         />
       )}
