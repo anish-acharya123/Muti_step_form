@@ -21,7 +21,7 @@ export default App;
 const Group = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className="flex  flex-col    min-h-screen justify-center items-center ">
-      <div className="border-2 p-10  text-center content-center space-y-10">
+      <div className="border-2 shadow-md p-10  text-center content-center space-y-10">
         {children}
       </div>
     </div>

@@ -14,7 +14,6 @@ const Form = () => {
   }
 
   const { step, setStep } = stepContext;
-  //   console.log(step);
 
   const {
     handleSubmit,
