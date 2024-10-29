@@ -28,7 +28,7 @@ const InputText = ({
           label={label}
           variant={variant}
           error={!!errors.firstName}
-          // helperText={errors.firstName ? errors.firstName.message : ""}
+          helperText={errors.firstName ? errors.firstName.message : ""}
           fullWidth
         />
       )}

@@ -1,13 +1,16 @@
 import { useContext } from "react";
 import { Button } from "@mui/material";
 import { StepContext } from "../context/StepContext";
+
 type BtnProps = {
   label: string;
   step: number;
-  varient: "contained" | "outlined";
+  type?: "button" | "submit";
+  variant: "contained" | "outlined";
   color: "success" | "primary";
 };
-const Btn = ({ label, varient, color, step }: BtnProps) => {
+
+const Btn = ({ label, variant, color, step, type = "button" }: BtnProps) => {
   const stepContext = useContext(StepContext);
 
   if (!stepContext) {
@@ -16,12 +19,16 @@ const Btn = ({ label, varient, color, step }: BtnProps) => {
 
   const { setStep } = stepContext;
 
+  const handleClick = () => {
+    if (type === "button") {
+      setStep(step);
+    }
+  };
+
   return (
-    <div>
-      <Button variant={varient} color={color} onClick={() => setStep(step)}>
-        {label}
-      </Button>
-    </div>
+    <Button type={type} variant={variant} color={color} onClick={handleClick}>
+      {label}
+    </Button>
   );
 };
 

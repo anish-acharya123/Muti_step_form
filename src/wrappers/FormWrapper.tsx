@@ -3,7 +3,7 @@ const FormWrapper = ({ children }: { children: React.ReactNode }) => {
 };
 
 const Section = ({ children }: { children: React.ReactNode }) => {
-  return <div className=" space-x-4 flex">{children}</div>;
+  return <div className="  flex md:flex-row bg-green- gap-4 flex-col">{children}</div>;
 };
 
 const InputSection = ({ children }: { children: React.ReactNode }) => {
@@ -19,7 +19,7 @@ const Label = ({
 }) => {
   return (
     <div>
-      <p className="text-left font-medium text-xl mb-2">{label}</p>
+      <p className="text-left font-medium text-xl mb-4">{label}</p>
       {children}
     </div>
   );

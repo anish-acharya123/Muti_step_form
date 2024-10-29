@@ -1,6 +1,6 @@
 // import { Button } from "@mui/material";
 // import InputText from "../ui/InputText";
-import { FieldErrors, FieldValues } from "react-hook-form";
+import { Control, FieldErrors, FieldValues } from "react-hook-form";
 
 import InputText from "../ui/InputText";
 import { InputSection, Label, Section } from "../wrappers/FormWrapper";
@@ -13,7 +13,7 @@ export type inputItems = {
 };
 
 export type Props = {
-  control: any;
+  control: Control<FieldValues>;
   errors: FieldErrors<FieldValues>;
 };
 const First = ({ control, errors }: Props) => {
@@ -53,7 +53,7 @@ const First = ({ control, errors }: Props) => {
         </Section>
       </Label>
 
-      <Btn varient="contained" color="success" step={1} label="Next" />
+      <Btn variant="contained" color="success" step={1} label="Next" />
     </div>
   );
 };
