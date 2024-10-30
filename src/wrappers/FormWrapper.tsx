@@ -3,7 +3,7 @@ const FormWrapper = ({ children }: { children: React.ReactNode }) => {
 };
 
 const Section = ({ children }: { children: React.ReactNode }) => {
-  return <div className="  flex md:flex-row bg-green- gap-4 flex-col">{children}</div>;
+  return <section className="  flex md:flex-row bg-green- gap-4 flex-col">{children}</section>;
 };
 
 const InputSection = ({ children }: { children: React.ReactNode }) => {
