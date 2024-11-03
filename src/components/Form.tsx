@@ -1,9 +1,9 @@
 import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { StepContext } from "../context/StepContext";
+import { FormWrapper } from "../wrappers/FormWrapper";
 import First from "./First";
 import Second from "./Second";
-import { FormWrapper } from "../wrappers/FormWrapper";
 import Third from "./Third";
 
 const Form = () => {
